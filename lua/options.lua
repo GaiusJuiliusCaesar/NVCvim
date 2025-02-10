@@ -13,3 +13,9 @@ opt.encoding = "utf-8"
 -- Set ColorColumn
 opt.colorcolumn = "80"
 opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
+-- Backup and Swapfile
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
+-- Relative Line number
+opt.relativenumber = true
