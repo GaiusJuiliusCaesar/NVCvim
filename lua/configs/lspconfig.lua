@@ -39,6 +39,29 @@ end
 -- Enable all
 vim.lsp.enable(servers)
 
+--
+-- PowerShellEditorServices Setup config
+--
+
+local mason_root = vim.fn.stdpath "data" .. "/mason/packages"
+local pses = mason_root .. "/powershell-editor-services"
+
+vim.lsp.config("powershell_es", {
+  cmd = {
+    "pwsh",
+    "-NoLogo",
+    "-NoProfile",
+    "-Command",
+    pses .. "/PowerShellEditorServices/Start-EditorServices.ps1 -Stdio -LogLevel Information",
+  },
+  filetypes = { "ps1", "psm1", "psd1" },
+  init_options = {
+    -- helps avoid profile-related failures in some environments
+    enableProfileLoading = false,
+  },
+})
+
+-- vim.lsp.enable "powershell_es"
 -- Configure powershell_es
 -- lspconfig.powershell_es.setup {
 --   bundle_path = bundle_path,

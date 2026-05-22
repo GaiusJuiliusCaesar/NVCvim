@@ -1,0 +1,10 @@
+#
+# .gitignore
+#
+*.json
+*.log
+
+#
+# Do not ignore
+#
+!lazy-lock.json
