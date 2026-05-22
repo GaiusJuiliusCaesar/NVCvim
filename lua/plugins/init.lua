@@ -1,6 +1,7 @@
 -- lua/plugins/init.lua
 
 return {
+  -- Format on Save
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
@@ -30,6 +31,8 @@ return {
       },
     },
   },
+
+  -- lspconfig
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -37,6 +40,7 @@ return {
     end,
   },
 
+  -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -86,11 +90,11 @@ return {
   },
 
   -- Powershell
-  {
-    "TheLeoP/powershell.nvim",
-    ---@type powershell.user_config
-    opts = {
-      bundle_path = "~/.config/nvim/customlsp/PowerShellEditorServices/",
-    },
-  },
+  -- {
+  --   "TheLeoP/powershell.nvim",
+  --   ---@type powershell.user_config
+  --   opts = {
+  --     bundle_path = "~/.config/nvim/customlsp/PowerShellEditorServices/",
+  --   },
+  -- },
 }
